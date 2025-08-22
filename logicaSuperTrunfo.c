@@ -39,7 +39,7 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    int escolhaAtributo;
 
     // ESTADO 1
     char estado_um[20];
@@ -179,20 +179,117 @@ int main() {
 
     printf("\n----------------------------------------------------\n");
 
-    if (super_poder_estado_um > super_poder_estado_dois)
+    printf("Escolha qual Atributo será comparada: \n");
+    printf("---------\n");
+    printf("1 - População.");
+    printf("2 - Área.");
+    printf("3 - PIB.");
+    printf("4 - Pontos Turísticos.");
+    printf("5 - Densidade Populacional.");
+    printf("6 - PIB Per Capita.");
+    printf("7 - Super Poder.");
+    scanf("%d", &escolhaAtributo);
+    printf("---------\n");
+
+    switch (escolhaAtributo)
     {
-        printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
-        printf("Com o Super Poder: %.2f\n", super_poder_estado_um);
-    }
-    else if (super_poder_estado_dois > super_poder_estado_um)
-    {
-        printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
-        printf("Com o Super Poder: %.2f\n", super_poder_estado_dois);
+    case 1:
+        if (populacao_estado_um > populacao_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com a População %lu habitantes!\n", populacao_estado_um);
+            }
+            else if (populacao_estado_dois > populacao_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com a População %lu habitantes!\n", populacao_estado_dois);
+            }
+        break;
+
+    case 2:
+        if (area_estado_um > area_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com a Área de %.2f km²!\n", area_estado_um);
+            }
+            else if (area_estado_dois > area_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com a Área de %.2f km²!\n", area_estado_dois);
+            }
+        break;
+
+    case 3:
+        if (PIB_estado_um > PIB_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com o PIB %.2f Bilhões de Reais!\n", PIB_estado_um);
+            }
+            else if (PIB_estado_dois > PIB_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com o PIB %.2f Bilhões de Reais!\n", PIB_estado_dois);
+            }
+        break;
+
+    case 4:
+        if (pontos_turisticos_estado_um > pontos_turisticos_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com %d Pontos Turisticos!\n", pontos_turisticos_estado_um);
+            }
+            else if (pontos_turisticos_estado_dois > pontos_turisticos_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com %d Pontos Turisticos!\n", pontos_turisticos_estado_dois);
+            }
+        break;
+
+    case 5:
+        if (densidade_populacional_estado_um < densidade_populacional_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com a Densidade Populacional %.2f hab/km²!\n", densidade_populacional_estado_um);
+            }
+            else if (densidade_populacional_estado_dois < densidade_populacional_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com a Densidade Populacional %.2f hab/km²!\n", densidade_populacional_estado_dois);
+            }
+        break;
+
+    case 6:
+        if (PIB_percapita_estado_um > PIB_percapita_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com o PIB per Capita: %.2f !\n", PIB_percapita_estado_um);
+            }
+            else if (PIB_percapita_estado_dois > PIB_percapita_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com o PIB per Capita: %.2f !\n", PIB_percapita_estado_dois);
+            }
+        break;
+
+    case 7:
+        if (super_poder_estado_um > super_poder_estado_dois)
+            {
+                printf("Carta Vencedora é: Carta 1 - %s.\n", nome_cidade_estado_um);
+                printf("Com o Super Poder: %.2f\n", super_poder_estado_um);
+            }
+            else if (super_poder_estado_dois > super_poder_estado_um)
+            {
+                printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
+                printf("Com o Super Poder: %.2f\n", super_poder_estado_dois);
+            }
+        break;
+    
+    default:
+        printf("Opção Invalida!");
+        break;
     }
 
     printf("\n----------------------------------------------------\n");
-
-    return 0;
 
     return 0;
 }
