@@ -39,6 +39,8 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
+        setlocale(LC_ALL, "pt_BR.UTF-8");
+
     int escolhaAtributo;
 
     // ESTADO 1
@@ -181,13 +183,13 @@ int main() {
 
     printf("Escolha qual Atributo será comparada: \n");
     printf("---------\n");
-    printf("1 - População.");
-    printf("2 - Área.");
-    printf("3 - PIB.");
-    printf("4 - Pontos Turísticos.");
-    printf("5 - Densidade Populacional.");
-    printf("6 - PIB Per Capita.");
-    printf("7 - Super Poder.");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB.\n");
+    printf("4 - Pontos Turísticos.\n");
+    printf("5 - Densidade Populacional.\n");
+    printf("6 - PIB Per Capita.\n");
+    printf("7 - Super Poder.\n");
     scanf("%d", &escolhaAtributo);
     printf("---------\n");
 
@@ -203,7 +205,11 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com a População %lu habitantes!\n", populacao_estado_dois);
+            } else if (populacao_estado_dois == populacao_estado_um)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
+            
         break;
 
     case 2:
@@ -216,6 +222,9 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com a Área de %.2f km²!\n", area_estado_dois);
+            } else if (area_estado_um == area_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
 
@@ -229,6 +238,9 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com o PIB %.2f Bilhões de Reais!\n", PIB_estado_dois);
+            } else if (PIB_estado_um == PIB_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
 
@@ -242,6 +254,9 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com %d Pontos Turisticos!\n", pontos_turisticos_estado_dois);
+            } else if (pontos_turisticos_estado_um == pontos_turisticos_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
 
@@ -255,6 +270,9 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com a Densidade Populacional %.2f hab/km²!\n", densidade_populacional_estado_dois);
+            } else if (densidade_populacional_estado_um == densidade_populacional_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
 
@@ -268,6 +286,9 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com o PIB per Capita: %.2f !\n", PIB_percapita_estado_dois);
+            } else if (PIB_percapita_estado_um == PIB_percapita_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
 
@@ -281,15 +302,18 @@ int main() {
             {
                 printf("Carta Vencedora é: Carta 2 - %s.\n", nome_cidade_estado_dois);
                 printf("Com o Super Poder: %.2f\n", super_poder_estado_dois);
+            } else if (super_poder_estado_um == super_poder_estado_dois)
+            {
+                printf("Os 2 atributos das Cartas são iguais: Empate!\n");
             }
         break;
     
     default:
-        printf("Opção Invalida!");
+        printf("Opção Invalida!\n");
         break;
     }
 
-    printf("\n----------------------------------------------------\n");
+    printf("----------------------------------------------------\n");
 
     return 0;
 }
