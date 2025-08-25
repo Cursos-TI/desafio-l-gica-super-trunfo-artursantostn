@@ -183,7 +183,7 @@ int main() {
 
     printf("\n----------------------------------------------------\n");
 
-    printf("Escolha qual Atributo será comparada: \n");
+    printf("Escolha qual Atributo será escolhida para a Comparação Indiviual: \n");
     printf("---------\n");
     printf("1 - População.\n");
     printf("2 - Área.\n");
