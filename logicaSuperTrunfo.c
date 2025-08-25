@@ -39,7 +39,9 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-        setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+
+    int comparativoAtributo1, comparativoAtributo2, resultadoComparativo1, resultadoComparativo2;
 
     int escolhaAtributo;
 
@@ -314,6 +316,132 @@ int main() {
     }
 
     printf("----------------------------------------------------\n");
+    printf("Vamos comparar os Atributos!\n");
+    printf("Escolha o primeiro Atributo.\n");
+    printf("----------------------------------------------------\n");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB.\n");
+    printf("4 - Pontos Turísticos.\n");
+    printf("5 - Densidade Populacional.\n");
+    printf("6 - PIB Per Capita.\n");
+    printf("7 - Super Poder.\n");
+    printf("----------------------------------------------------\n");
+    scanf("%d", &comparativoAtributo1);
 
+    switch (comparativoAtributo1)
+    {
+    case 1:
+        resultadoComparativo1 = populacao_estado_um > populacao_estado_dois ? 1 : 0;
+        break;
+    
+    case 2:
+        resultadoComparativo1 = area_estado_um > area_estado_dois? 1 : 0;
+        break;
+    
+    case 3:
+        resultadoComparativo1 = PIB_estado_um > PIB_estado_dois ? 1 : 0;
+        break;
+    
+    case 4:
+        resultadoComparativo1 = pontos_turisticos_estado_um > pontos_turisticos_estado_dois ? 1 : 0;
+        break;
+    
+    case 5:
+        resultadoComparativo1 = densidade_populacional_estado_um < densidade_populacional_estado_dois ? 1 : 0;
+        break;
+    
+    case 6:
+        resultadoComparativo1 = PIB_percapita_estado_um > PIB_percapita_estado_dois ? 1 : 0;
+        break;
+    
+    case 7:
+        resultadoComparativo1 = super_poder_estado_um > super_poder_estado_dois ? 1 : 0;
+        break;
+
+    default:
+        printf("Opção Invalida!\n");
+        break;
+    }
+    
+    printf("----------------------------------------------------\n");
+    printf("Vamos Escolher agora o segundo Atributo.\n");
+    printf("----------------------------------------------------\n");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB.\n");
+    printf("4 - Pontos Turísticos.\n");
+    printf("5 - Densidade Populacional.\n");
+    printf("6 - PIB Per Capita.\n");
+    printf("7 - Super Poder.\n");
+    printf("----------------------------------------------------\n");
+    scanf("%d", &comparativoAtributo2);
+
+    if (comparativoAtributo1 == comparativoAtributo2)
+    {
+        printf("----------------------------------------------------\n");
+        printf("Você escolheu o mesmo Atributo.\n");
+        printf("Vamos Escolher agora o segundo Atributo.\n");
+        printf("----------------------------------------------------\n");
+        printf("1 - População.\n");
+        printf("2 - Área.\n");
+        printf("3 - PIB.\n");
+        printf("4 - Pontos Turísticos.\n");
+        printf("5 - Densidade Populacional.\n");
+        printf("6 - PIB Per Capita.\n");
+        printf("7 - Super Poder.\n");
+        printf("----------------------------------------------------\n");
+        scanf("%d", &comparativoAtributo2);
+
+    } else
+    {
+        switch (comparativoAtributo2)
+    {
+    case 1:
+        resultadoComparativo2 = populacao_estado_um > populacao_estado_dois ? 1 : 0;
+        break;
+    
+    case 2:
+        resultadoComparativo2 = area_estado_um > area_estado_dois? 1 : 0;
+        break;
+    
+    case 3:
+        resultadoComparativo2 = PIB_estado_um > PIB_estado_dois ? 1 : 0;
+        break;
+    
+    case 4:
+        resultadoComparativo2 = pontos_turisticos_estado_um > pontos_turisticos_estado_dois ? 1 : 0;
+        break;
+    
+    case 5:
+        resultadoComparativo2 = densidade_populacional_estado_um < densidade_populacional_estado_dois ? 1 : 0;
+        break;
+    
+    case 6:
+        resultadoComparativo2 = PIB_percapita_estado_um > PIB_percapita_estado_dois ? 1 : 0;
+        break;
+    
+    case 7:
+        resultadoComparativo2 = super_poder_estado_um > super_poder_estado_dois ? 1 : 0;
+        break;
+
+    default:
+        printf("Opção Invalida!\n");
+        break;
+    }
+    }
+    
+    if (resultadoComparativo1 && resultadoComparativo2)
+    {
+        printf("O vencedor da comparação é: %s\n", nome_cidade_estado_um);
+    } else if (!resultadoComparativo1 && !resultadoComparativo2)
+    {
+        printf("O vencedor da comparação é: %s\n", nome_cidade_estado_dois);
+    }
+    else if (resultadoComparativo1 != resultadoComparativo2)
+    {
+        printf("Tanto %s como %s tiveram 1 vitória na comparação!\n", nome_cidade_estado_um, nome_cidade_estado_dois);
+    }
+    
     return 0;
 }
